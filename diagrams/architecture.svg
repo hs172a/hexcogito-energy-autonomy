@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <style>
+      .box { fill: #e8f4f8; stroke: #2c5e8e; stroke-width: 2; rx: 8; ry: 8; }
+      .subbox { fill: #f0f8ff; stroke: #4a90c2; stroke-width: 1.5; rx: 6; ry: 6; }
+      .arrow { stroke: #333; stroke-width: 2; marker-end: url(#arrowhead); }
+      .text { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px; fill: #333; }
+      .title { font-weight: bold; font-size: 16px; }
+      .label { font-size: 12px; fill: #666; }
+      .bullet { font-size: 12px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#fff"/>
+
+  <!-- Top: OpenClaw Agent -->
+  <g transform="translate(300, 30)">
+    <rect class="box" x="0" y="0" width="400" height="180" />
+    <text class="text title" x="200" y="25" text-anchor="middle">OpenClaw Agent</text>
+
+    <!-- Decision Engine sub-box -->
+    <g transform="translate(10, 40)">
+      <rect class="subbox" x="0" y="0" width="185" height="120" />
+      <text class="text title" x="92" y="25" text-anchor="middle">Decision Engine</text>
+      <text class="text bullet" x="10" y="45">(ClawRouter + Custom Logic)</text>
+      <text class="text bullet" x="10" y="65">• Power Budget Scheduler</text>
+      <text class="text bullet" x="10" y="85">• Revenue Reinvestment Planner</text>
+      <text class="text bullet" x="10" y="105">• Smart Contract Interface</text>
+      <text class="text bullet" x="25" y="125">(Base)</text>
+    </g>
+
+    <!-- State & Memory sub-box -->
+    <g transform="translate(205, 40)">
+      <rect class="subbox" x="0" y="0" width="185" height="120" />
+      <text class="text title" x="92" y="25" text-anchor="middle">State & Memory</text>
+      <text class="text bullet" x="10" y="45">• Energy balance (kWh)</text>
+      <text class="text bullet" x="10" y="65">• USDC balance</text>
+      <text class="text bullet" x="10" y="85">• Forecasts (solar, load)</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1: MQTT / HTTP -->
+  <g>
+    <line class="arrow" x1="500" y1="210" x2="500" y2="250" />
+    <text class="text label" x="540" y="235">MQTT / HTTP</text>
+  </g>
+
+  <!-- Hardware Controller -->
+  <g transform="translate(300, 260)">
+    <rect class="box" x="0" y="0" width="400" height="120" />
+    <text class="text title" x="200" y="25" text-anchor="middle">Hardware Controller (ESP32)</text>
+    <text class="text bullet" x="20" y="50">• Solar charge controller (Victron, Daly, etc.)</text>
+    <text class="text bullet" x="20" y="70">• Battery monitor (Voltage, Current, SOC)</text>
+    <text class="text bullet" x="20" y="90">• Inverter control (on/off, power limit)</text>
+    <text class="text bullet" x="20" y="110">• Grid meter (optional, for export measurement)</text>
+  </g>
+
+  <!-- Arrow 2: PWM / Relay / RS485 -->
+  <g>
+    <line class="arrow" x1="500" y1="380" x2="500" y2="420" />
+    <text class="text label" x="540" y="410">PWM / Relay / RS485</text>
+  </g>
+
+  <!-- Physical Infrastructure -->
+  <g transform="translate(300, 430)">
+    <rect class="box" x="0" y="0" width="400" height="120" />
+    <text class="text title" x="200" y="25" text-anchor="middle">Physical Infrastructure</text>
+
+    <!-- Internal flow -->
+    <g transform="translate(20, 45)">
+      <rect class="subbox" x="0" y="0" width="360" height="30" />
+      <text class="text bullet" x="10" y="20">Solar Panels → Charge Controller → Battery Bank → Inverter → AC Load</text>
+    </g>
+    <text class="text bullet" x="30" y="90">Grid Export (optional)</text>
+  </g>
+
+  <!-- Arrow 3: USDC on Base -->
+  <g>
+    <line class="arrow" x1="500" y1="550" x2="500" y2="590" />
+    <text class="text label" x="540" y="580">USDC on Base</text>
+  </g>
+
+  <!-- P2P Energy Trading Smart Contract -->
+  <g transform="translate(300, 600)">
+    <rect class="box" x="0" y="0" width="400" height="80" />
+    <text class="text title" x="200" y="25" text-anchor="middle">P2P Energy Trading Smart Contract</text>
+    <text class="text bullet" x="20" y="50">• Register agent wallet (0.5 USDC deposit)</text>
+    <text class="text bullet" x="20" y="70">• Post/accept offers, report delivery</text>
+  </g>
+</svg>
