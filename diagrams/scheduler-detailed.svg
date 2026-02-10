@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c5e8e" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#388e3c" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c62828" />
+    </marker>
+    <style>
+      .box { fill: #e8f4f8; stroke: #2c5e8e; stroke-width: 2; rx: 6; ry: 6; }
+      .diamond { fill: #fff8e1; stroke: #f9a825; stroke-width: 2; }
+      .action { fill: #e8f5e9; stroke: #388e3c; stroke-width: 2; rx: 6; ry: 6; }
+      .emergency { fill: #ffebee; stroke: #c62828; stroke-width: 2; rx: 6; ry: 6; }
+      .in-data { font-family: monospace; font-size: 12px; fill: #555; }
+      .text { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 14px; fill: #333; }
+      .label { font-size: 12px; fill: #666; }
+      .arrow { stroke: #2c5e8e; stroke-width: 2; marker-end: url(#arrowhead); }
+      .arrow-green { stroke: #388e3c; stroke-width: 2; marker-end: url(#arrowhead-green); }
+      .arrow-red { stroke: #c62828; stroke-width: 2; marker-end: url(#arrowhead-red); }
+      .thin { stroke: #999; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fff"/>
+
+  <!-- Title -->
+  <text class="text" x="600" y="40" text-anchor="middle" style="font-weight: bold; font-size: 20px;">Power Budget Scheduler: Detailed Flow</text>
+
+  <!-- Inputs gathering -->
+  <g transform="translate(100, 80)">
+    <rect class="box" x="0" y="0" width="300" height="140" />
+    <text class="text" x="150" y="25" text-anchor="middle">Input Collection</text>
+    <text class="in-data" x="15" y="50">battery_soc (0–1)</text>
+    <text class="in-data" x="15" y="70">solar_forecast (0–1)</text>
+    <text class="in-data" x="15" y="90">usdc_balance (USDC)</text>
+    <text class="in-data" x="15" y="110">llm_cost_per_token (USD)</text>
+    <text class="in-data" x="15" y="130">time_of_day (peak/off-peak)</text>
+  </g>
+  <line class="arrow" x1="250" y1="220" x2="250" y2="280" />
+
+  <!-- Main decision diamond -->
+  <g transform="translate(400, 240)">
+    <polygon class="diamond" points="0,-50 80,0 0,50 -80,0" />
+    <text class="text" x="0" y="5" text-anchor="middle">Excess Energy?</text>
+    <text class="label" x="0" y="-65" text-anchor="middle">battery_soc > 0.8</text>
+    <text class="label" x="0" y="-50" text-anchor="middle">and solar_forecast > 0.7</text>
+  </g>
+
+  <!-- Yes branch -->
+  <line class="arrow-green" x1="330" y1="240" x2="200" y2="240" />
+  <text class="label" x="265" y="235" text-anchor="middle">Yes</text>
+  <g transform="translate(80, 210)">
+    <rect class="action" x="0" y="0" width="200" height="60" />
+    <text class="text" x="100" y="30" text-anchor="middle">Sell Energy</text>
+    <text class="label" x="100" y="50" text-anchor="middle">P2P market</text>
+  </g>
+  <line class="arrow-green" x1="180" y1="240" x2="80" y2="300" />
+
+  <!-- Revenue check after sell -->
+  <g transform="translate(80, 300)">
+    <rect class="box" x="0" y="0" width="200" height="50" />
+    <text class="text" x="100" y="30" text-anchor="middle">Check Revenue</text>
+    <text class="label" x="100" y="50" text-anchor="middle">USDC balance ↑</text>
+  </g>
+  <line class="arrow-green" x1="180" y1="350" x2="350" y2="400" />
+
+  <!-- Reinvestment decision -->
+  <g transform="translate(400, 370)">
+    <polygon class="diamond" points="0,-40 60,0 0,40 -60,0" />
+    <text class="text" x="0" y="5" text-anchor="middle">Reinvest?</text>
+    <text class="label" x="0" y="-50" text-anchor="middle">USDC > threshold</text>
+  </g>
+  <!-- Yes: Reinvest -->
+  <line class="arrow" x1="340" y1="370" x2="250" y2="420" />
+  <text class="label" x="295" y="385" text-anchor="middle">Yes</text>
+  <g transform="translate(220, 400)">
+    <rect class="action" x="0" y="0" width="120" height="50" fill="#e3f2fd" stroke="#1565c0" />
+    <text class="text" x="60" y="30" text-anchor="middle">Buy hardware</text>
+  </g>
+  <!-- No: Skip -->
+  <line class="thin" x1="460" y1="370" x2="530" y2="370" />
+  <text class="label" x="495" y="355" text-anchor="middle">No</text>
+
+  <!-- Merge back -->
+  <line class="arrow-green" x1="280" y1="450" x2="400" y2="480" />
+  <g transform="translate(320, 480)">
+    <rect class="action" x="0" y="0" width="160" height="40" />
+    <text class="text" x="80" y="25" text-anchor="middle">Continue operation</text>
+  </g>
+
+  <!-- No branch from first decision -->
+  <line class="arrow" x1="470" y1="240" x2="600" y2="240" />
+  <text class="label" x="535" y="235" text-anchor="middle">No</text>
+
+  <!-- Second decision: Emergency? -->
+  <g transform="translate(700, 210)">
+    <polygon class="diamond" points="0,-50 80,0 0,50 -80,0" />
+    <text class="text" x="0" y="5" text-anchor="middle">Emergency?</text>
+    <text class="label" x="0" y="-65" text-anchor="middle">battery_soc < 0.2</text>
+    <text class="label" x="0" y="-50" text-anchor="middle">and usdc_balance low</text>
+  </g>
+  <line class="arrow-red" x1="620" y1="240" x2="540" y2="240" />
+  <line class="arrow" x1="620" y1="240" x2="620" y2="260" />
+  <line class="arrow-red" x1="620" y1="260" x2="540" y2="300" />
+
+  <!-- Yes: Emergency -->
+  <line class="arrow-red" x1="540" y1="300" x2="480" y2="360" />
+  <text class="label" x="510" y="330" text-anchor="middle">Yes</text>
+  <g transform="translate(420, 340)">
+    <rect class="emergency" x="0" y="0" width="140" height="60" />
+    <text class="text" x="70" y="25" text-anchor="middle">Run inference</text>
+    <text class="text" x="70" y="45" text-anchor="middle">FOR INCOME</text>
+  </g>
+  <line class="arrow-red" x1="560" y1="400" x2="700" y2="440" />
+
+  <!-- No: Balanced -->
+  <line class="arrow" x1="780" y1="240" x2="860" y2="240" />
+  <text class="label" x="820" y="235" text-anchor="middle">No</text>
+  <g transform="translate(840, 200)">
+    <rect class="action" x="0" y="0" width="140" height="80" fill="#e3f2fd" stroke="#1565c0" />
+    <text class="text" x="70" y="30" text-anchor="middle">Run inference</text>
+    <text class="text" x="70" y="50" text-anchor="middle">(balanced mode)</text>
+    <text class="label" x="70" y="70" text-anchor="middle">optimize cost</text>
+  </g>
+  <line class="arrow" x1="910" y1="240" x2="970" y2="240" />
+
+  <!-- Merge all paths -->
+  <line class="arrow-green" x1="560" y1="440" x2="700" y2="440" />
+  <line class="arrow" x1="970" y1="240" x2="700" y2="440" />
+
+  <!-- Final output -->
+  <g transform="translate(650, 460)">
+    <rect class="box" x="0" y="0" width="100" height="40" />
+    <text class="text" x="50" y="25" text-anchor="middle">Action</text>
+  </g>
+  <line class="arrow" x1="700" y1="500" x2="700" y2="560" />
+  <text class="label" x="700" y="580" text-anchor="middle">Decision executed</text>
+
+  <!-- Legend -->
+  <g transform="translate(800, 100)">
+    <rect class="action" x="0" y="0" width="20" height="20" />
+    <text class="label" x="25" y="15">Normal action</text>
+    <rect class="emergency" x="0" y="30" width="20" height="20" />
+    <text class="label" x="25" y="45">Emergency</text>
+    <polygon class="diamond" points="0,10 20,20 0,30 -20,20" transform="translate(0,60) scale(0.7)"/>
+    <text class="label" x="25" y="75">Decision</text>
+  </g>
+</svg>

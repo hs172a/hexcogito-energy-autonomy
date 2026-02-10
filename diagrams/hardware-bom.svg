@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+  <defs>
+    <style>
+      .bg { fill: #fff; }
+      .header { fill: #2c5e8e; }
+      .row-even { fill: #e8f4f8; }
+      .row-odd { fill: #f0f8ff; }
+      .text { font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 14px; fill: #333; }
+      .title { font-weight: bold; font-size: 18px; fill: #fff; }
+      .header-text { font-weight: bold; font-size: 14px; fill: #fff; }
+      .qty { font-family: monospace; font-size: 13px; }
+      .link { font-size: 12px; fill: #1565c0; text-decoration: underline; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="100%" height="100%"/>
+
+  <!-- Title -->
+  <text class="title" x="500" y="40" text-anchor="middle">Hardware Bill of Materials</text>
+
+  <!-- Table header -->
+  <g transform="translate(50, 70)">
+    <rect class="header" x="0" y="0" width="900" height="40" rx="4"/>
+    <text class="header-text" x="80" y="25">Component</text>
+    <text class="header-text" x="280" y="25">Spec</text>
+    <text class="header-text" x="480" y="25">Est. Cost</text>
+    <text class="header-text" x="650" y="25">Qty</text>
+    <text class="header-text" x="720" y="25">Notes</text>
+  </g>
+
+  <!-- Rows -->
+  <g transform="translate(50, 115)">
+    <!-- Row 1 -->
+    <rect class="row-even" x="0" y="0" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="30">Solar Panel</text>
+    <text class="text" x="280" y="30">200–500W, monocrystalline, 24V</text>
+    <text class="text" x="480" y="30">$150–300</text>
+    <text class="text qty" x="650" y="30">2–4</text>
+    <text class="text" x="720" y="30">Grid-tied with MC4</text>
+
+    <!-- Row 2 -->
+    <rect class="row-odd" x="0" y="50" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="80">Battery (48V Lithium)</text>
+    <text class="text" x="280" y="80">50–200Ah, with BMS</text>
+    <text class="text" x="480" y="80">$300–800</text>
+    <text class="text qty" x="650" y="80">1</text>
+    <text class="text" x="720" y="80">50Ah for start, expand</text>
+
+    <!-- Row 3 -->
+    <rect class="row-even" x="0" y="100" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="130">Inverter (Pure Sine)</text>
+    <text class="text" x="280" y="130">2–5kW, 48V, RS485/BT</text>
+    <text class="text" x="480" y="130">$200–500</text>
+    <text class="text qty" x="650" y="130">1</text>
+    <text class="text" x="720" y="130">Victron or similar</text>
+
+    <!-- Row 4 -->
+    <rect class="row-odd" x="0" y="150" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="180">Charge Controller</text>
+    <text class="text" x="280" y="180">MPPT, 60–80A</text>
+    <text class="text" x="480" y="180">$100–200</text>
+    <text class="text qty" x="650" y="180">1</text>
+    <text class="text" x="720" y="180">Victron SmartSolar</text>
+
+    <!-- Row 5 -->
+    <rect class="row-even" x="0" y="200" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="230">Microcontroller</text>
+    <text class="text" x="280" y="230">ESP32 (dual-core, WiFi/BT)</text>
+    <text class="text" x="480" y="230">$5–10</text>
+    <text class="text qty" x="650" y="230">1</text>
+    <text class="text" x="720" y="230">Custom firmware</text>
+
+    <!-- Row 6 -->
+    <rect class="row-odd" x="0" y="250" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="280">Current Sensor</text>
+    <text class="text" x="280" y="280">INA219, bi-directional</text>
+    <text class="text" x="480" y="280">$5–10</text>
+    <text class="text qty" x="650" y="280">1–2</text>
+    <text class="text" x="720" y="280">For battery & grid</text>
+
+    <!-- Row 7 -->
+    <rect class="row-even" x="0" y="300" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="330">Connectivity</text>
+    <text class="text" x="280" y="330">WiFi/Ethernet or Cellular</text>
+    <text class="text" x="480" y="330">$20–100</text>
+    <text class="text qty" x="650" y="330">1</text>
+    <text class="text" x="720" y="330">Starlink/Cellular</text>
+
+    <!-- Row 8 -->
+    <rect class="row-odd" x="0" y="350" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="380">Enclosure & Wiring</text>
+    <text class="text" x="280" y="380">Waterproof box, MC4, fuses</text>
+    <text class="text" x="480" y="380">$50–150</text>
+    <text class="text qty" x="650" y="380">1</text>
+    <text class="text" x="720" y="380">Safety first</text>
+
+    <!-- Row 9 -->
+    <rect class="row-even" x="0" y="400" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="430">Total (Initial)</text>
+    <text class="text" x="280" y="430">—</text>
+    <text class="text" x="480" y="430">$825–2060</text>
+    <text class="text qty" x="650" y="430">—</text>
+    <text class="text" x="720" y="430">~$1k typical</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(50, 530)">
+    <text class="text" x="0" y="0">Notes: Costs are approximate 2026 USD. Prices vary by region and supplier.</text>
+    <text class="text" x="0" y="25">Smart contract deployment on Base Sepolia (testnet) is free; mainnet requires ~0.5 USDC deposit.</text>
+  </g>
+</svg>

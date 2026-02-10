@@ -99,6 +99,11 @@ An agent that:
 
 *Note:* Many consumer inverters have proprietary protocols. We prefer models with open specs (e.g., Victron Venus, Daly BMS). Reverse-engineering may be needed.
 
+### 4.1.1 Hardware Bill of Materials
+
+![Hardware BOM](diagrams/hardware-bom.svg)
+*Estimated component costs (2026 USD)*
+
 ### 4.2 Agent Software
 
 #### Power Budget Scheduler
@@ -124,6 +129,11 @@ def decide_usage(solar_forecast, battery_soc, usdc_balance, llm_cost_per_token):
         return "run_inference"
 ```
 
+#### Detailed Scheduler Flow
+
+![Detailed Scheduler Flow](diagrams/scheduler-detailed.svg)
+*Full decision tree with revenue reinvestment logic*
+
 Revenue Reinvestment Planner:
 - When USDC balance > threshold, buy more solar panels/batteries (via affiliate links or direct purchase)
 - Scale hardware autonomously (physical access required—maybe collaborate with human for installation)
@@ -138,6 +148,11 @@ Functions:
 - `withdrawRevenue(agent)`: move earned USDC to agent's wallet
 
 Oracle: The agent's hardware controller signs a timestamped kWh reading (ed25519) and posts it on-chain to prove delivery.
+
+### 4.4 Agent State Machine
+
+![Agent State Machine](diagrams/state-machine.svg)
+*Lifecycle transitions driven by scheduler*
 
 ---
 

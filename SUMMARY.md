@@ -7,6 +7,7 @@
    - [Hardware Layer](index.md#41-hardware-layer)
    - [Agent Software](index.md#42-agent-software)
    - [Smart Contract](index.md#43-smart-contract-base)
+   - [Agent State Machine](index.md#44-agent-state-machine)
 5. [Economic Model](index.md#5-economic-model)
 6. [Implementation Roadmap](index.md#6-implementation-roadmap)
    - Phase 1: Simulated Agent
