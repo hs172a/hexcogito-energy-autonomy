@@ -32,56 +32,7 @@ An agent that:
 
 ## 3. Architecture Overview
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                         OpenClaw Agent                          │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  Decision Engine (ClawRouter + Custom Logic)            │  │
-│  │  - Power Budget Scheduler                              │  │
-│  │  - Revenue Reinvestment Planner                        │  │
-│  │  - Smart Contract Interface (Base)                     │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  State & Memory                                        │  │
-│  │  - Energy balance (kWh)                                │  │
-│  │  - USDC balance                                        │  │
-│  │  - Forecasts (solar, load)                             │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
-                               │
-                               │ MQTT / HTTP
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                  Hardware Controller (ESP32)                   │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │  - Solar charge controller (Victron, Daly, etc.)        │  │
-│  │  - Battery monitor (Voltage, Current, SOC)             │  │
-│  │  - Inverter control (on/off, power limit)              │  │
-│  │  - Grid meter (optional, for export measurement)       │  │
-│  └──────────────────────────────────────────────────────────┘  │
-                               │
-                               │ PWM / Relay / RS485
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    Physical Infrastructure                     │
-│  [Solar Panels] → [Charge Controller] → [Battery Bank]       │
-│                                         ↓                      │
-│                                   [Inverter] → [AC Load]      │
-│                                         ↓                      │
-│                                   [Grid Export (optional)]    │
-└─────────────────────────────────────────────────────────────────┘
-                               │
-                               │ USDC on Base
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                 P2P Energy Trading Smart Contract              │
-│  - Register agent wallet (0.5 USDC deposit)                   │
-│  - Post sell offers (kWh price in USDC)                       │
-│  - Accept buy requests from other agents                      │
-│  - Dispute resolution (time-series data from hardware)       │
-│  - Royalty to open-source maintainers (optional)             │
-└─────────────────────────────────────────────────────────────────┘
-```
+![Architecture Overview](diagrams/architecture.svg)
 
 ---
 
