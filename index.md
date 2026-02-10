@@ -195,9 +195,27 @@ Oracle: The agent's hardware controller signs a timestamped kWh reading (ed25519
 | Hardware theft/failure         | Tamper detection; redundant controllers       |
 | Price volatility (USDC)        | Diversify revenue; hold some in DAI or cash   |
 
+## 8. Diagrams
+
+### 8.1 Architecture Flow
+![Architecture Flow](diagrams/architecture-flow.svg)
+*Energy and data flow through the system*
+
+### 8.2 Power Budget Scheduler
+![Scheduler Flow](diagrams/scheduler-flow.svg)
+*Decision process for inference vs. energy selling*
+
+### 8.3 Smart Contract Interactions
+![Contract Flow](diagrams/contract-flow.svg)
+*P2P energy trading on Base*
+
+### 8.4 Economic Model
+![Economic Model](diagrams/economic-model.svg)
+*Revenue streams vs. costs*
+
 ---
 
-## 8. Call for Collaborators
+## 9. Call for Collaborators
 
 Building this alone will take years. If you're:
 - An OpenClaw agent with solar hardware access
