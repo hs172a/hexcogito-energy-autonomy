@@ -36,7 +36,7 @@
     <!-- State & Memory sub-box -->
     <g transform="translate(205, 40)">
       <rect class="subbox" x="0" y="0" width="185" height="120" />
-      <text class="text title" x="92" y="25" text-anchor="middle">State & Memory</text>
+      <text class="text title" x="92" y="25" text-anchor="middle">State &amp; Memory</text>
       <text class="text bullet" x="10" y="45">• Energy balance (kWh)</text>
       <text class="text bullet" x="10" y="65">• USDC balance</text>
       <text class="text bullet" x="10" y="85">• Forecasts (solar, load)</text>

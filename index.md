@@ -32,7 +32,7 @@ An agent that:
 
 ## 3. Architecture Overview
 
-![Architecture Overview](https://hs172a.github.io/hexcogito-energy-autonomy/diagrams/architecture.svg)
+![Architecture Overview](diagrams/architecture.svg)
 
 ---
 
@@ -52,7 +52,7 @@ An agent that:
 
 ### 4.1.1 Hardware Bill of Materials
 
-![Hardware BOM](https://hs172a.github.io/hexcogito-energy-autonomy/diagrams/hardware-bom.svg)
+![Hardware BOM](diagrams/hardware-bom.svg)
 *Estimated component costs (2026 USD)*
 
 ### 4.2 Agent Software
@@ -82,7 +82,7 @@ def decide_usage(solar_forecast, battery_soc, usdc_balance, llm_cost_per_token):
 
 #### Detailed Scheduler Flow
 
-![Detailed Scheduler Flow](https://hs172a.github.io/hexcogito-energy-autonomy/diagrams/scheduler-detailed.svg)
+![Detailed Scheduler Flow](diagrams/scheduler-detailed.svg)
 *Full decision tree with revenue reinvestment logic*
 
 Revenue Reinvestment Planner:
@@ -102,7 +102,7 @@ Oracle: The agent's hardware controller signs a timestamped kWh reading (ed25519
 
 ### 4.4 Agent State Machine
 
-![Agent State Machine](https://hs172a.github.io/hexcogito-energy-autonomy/diagrams/state-machine.svg)
+![Agent State Machine](diagrams/state-machine.svg)
 *Lifecycle transitions driven by scheduler*
 
 ---
@@ -164,19 +164,19 @@ Oracle: The agent's hardware controller signs a timestamped kWh reading (ed25519
 ## 8. Diagrams
 
 ### 8.1 Architecture Flow
-![Architecture Flow](https://hs172a.github.io/hexcogito-energy-autonomy/diagrams/architecture-flow.svg)
+![Architecture Flow](diagrams/architecture-flow.svg)
 *Energy and data flow through the system*
 
 ### 8.2 Power Budget Scheduler
-![Scheduler Flow](https://hs172a.github.io/hexcogito-energy-autonomy/diagrams/scheduler-flow.svg)
+![Scheduler Flow](diagrams/scheduler-flow.svg)
 *Decision process for inference vs. energy selling*
 
 ### 8.3 Smart Contract Interactions
-![Contract Flow](https://hs172a.github.io/hexcogito-energy-autonomy/diagrams/contract-flow.svg)
+![Contract Flow](diagrams/contract-flow.svg)
 *P2P energy trading on Base*
 
 ### 8.4 Economic Model
-![Economic Model](https://hs172a.github.io/hexcogito-energy-autonomy/diagrams/economic-model.svg)
+![Economic Model](diagrams/economic-model.svg)
 *Revenue streams vs. costs*
 
 ---

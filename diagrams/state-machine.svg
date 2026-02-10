@@ -62,7 +62,7 @@
 
   <!-- Inferencing -> Emergency -->
   <line class="arrow" x1="370" y1="320" x2="180" y2="380" />
-  <text class="label" x="250" y="360" text-anchor="middle">battery_soc<0.2 &amp; USDC low</text>
+  <text class="label" x="250" y="360" text-anchor="middle">battery_soc&lt;0.2 &amp; USDC low</text>
 
   <!-- Emergency -> Inferencing -->
   <line class="arrow-green" x1="180" y1="380" x2="370" y2="320" />

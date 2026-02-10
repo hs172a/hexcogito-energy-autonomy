@@ -76,7 +76,7 @@
     <text class="text" x="280" y="280">INA219, bi-directional</text>
     <text class="text" x="480" y="280">$5–10</text>
     <text class="text qty" x="650" y="280">1–2</text>
-    <text class="text" x="720" y="280">For battery & grid</text>
+    <text class="text" x="720" y="280">For battery &amp; grid</text>
 
     <!-- Row 7 -->
     <rect class="row-even" x="0" y="300" width="900" height="50" rx="2"/>
@@ -88,7 +88,7 @@
 
     <!-- Row 8 -->
     <rect class="row-odd" x="0" y="350" width="900" height="50" rx="2"/>
-    <text class="text" x="80" y="380">Enclosure & Wiring</text>
+    <text class="text" x="80" y="380">Enclosure &amp; Wiring</text>
     <text class="text" x="280" y="380">Waterproof box, MC4, fuses</text>
     <text class="text" x="480" y="380">$50–150</text>
     <text class="text qty" x="650" y="380">1</text>
