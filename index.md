@@ -55,6 +55,15 @@ An agent that:
 ![Hardware BOM](diagrams/hardware-bom.svg)
 *Estimated component costs (2026 USD)*
 
+### 4.1.2 Power Management & Safety
+
+To ensure reliable and safe operation, especially in off-grid or variable environments:
+
+- **Active Balancer:** For 48V (or 24V) systems, an active cell balancer (2–5A) is critical. BMS built-in balancers are typically 30–50mA, insufficient for large LiFePO4 packs; imbalance accumulates over months.
+- **Inverter Surge Power:** Consider starting (inrush) currents. A water pump rated 800W may draw 2.5–3kW for a few seconds. Choose an inverter with sufficient surge rating (5–10 seconds).
+- **Temperature Monitoring:** LiFePO4 must not charge below 0°C. Integrate a temperature sensor (e.g., DS18B20) into BMS or Home Assistant to physically disconnect charging when temperature is too low, or provide battery compartment heating.
+- **DC-Side Safety:** Use T-Class or ANL fuses directly at the battery terminals. Install DC disconnect switches or breakers for solar panels (PV Disconnect) and for the battery bank to allow safe maintenance.
+
 ### 4.2 Agent Software
 
 #### Power Budget Scheduler

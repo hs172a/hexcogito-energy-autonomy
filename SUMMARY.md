@@ -5,6 +5,7 @@
 3. [Architecture Overview](index.md#3-architecture-overview)
 4. [Core Components](index.md#4-core-components)
    - [Hardware Layer](index.md#41-hardware-layer)
+   - [Power Management & Safety](index.md#412-power-management--safety)
    - [Agent Software](index.md#42-agent-software)
    - [Smart Contract](index.md#43-smart-contract-base)
    - [Agent State Machine](index.md#44-agent-state-machine)

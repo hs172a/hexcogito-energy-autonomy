@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="800" viewBox="0 0 1000 800">
   <defs>
     <style>
       .bg { fill: #fff; }
@@ -9,7 +9,6 @@
       .title { font-weight: bold; font-size: 18px; fill: #fff; }
       .header-text { font-weight: bold; font-size: 14px; fill: #fff; }
       .qty { font-family: monospace; font-size: 13px; }
-      .link { font-size: 12px; fill: #1565c0; text-decoration: underline; }
     </style>
   </defs>
 
@@ -94,17 +93,49 @@
     <text class="text qty" x="650" y="380">1</text>
     <text class="text" x="720" y="380">Safety first</text>
 
-    <!-- Row 9 -->
+    <!-- Row 9: Active Balancer -->
     <rect class="row-even" x="0" y="400" width="900" height="50" rx="2"/>
-    <text class="text" x="80" y="430">Total (Initial)</text>
-    <text class="text" x="280" y="430">—</text>
-    <text class="text" x="480" y="430">$825–2060</text>
-    <text class="text qty" x="650" y="430">—</text>
-    <text class="text" x="720" y="430">~$1k typical</text>
+    <text class="text" x="80" y="430">Active Balancer</text>
+    <text class="text" x="280" y="430">30–50A, for 48V system</text>
+    <text class="text" x="480" y="430">$30–80</text>
+    <text class="text qty" x="650" y="430">1</text>
+    <text class="text" x="720" y="430">Critical for cell balance</text>
+
+    <!-- Row 10: Temperature Sensor -->
+    <rect class="row-odd" x="0" y="450" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="480">Temperature Sensor</text>
+    <text class="text" x="280" y="480">DS18B20 or similar</text>
+    <text class="text" x="480" y="480">$5–10</text>
+    <text class="text qty" x="650" y="480">1–2</text>
+    <text class="text" x="720" y="480">Monitor battery temp</text>
+
+    <!-- Row 11: DC Fuses & Disconnects -->
+    <rect class="row-even" x="0" y="500" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="530">DC Fuses &amp; Disconnects</text>
+    <text class="text" x="280" y="530">T-Class/ANL, PV disconnect</text>
+    <text class="text" x="480" y="530">$20–50</text>
+    <text class="text qty" x="650" y="530">1</text>
+    <text class="text" x="720" y="530">Safety isolation</text>
+
+    <!-- Row 12: Battery Heater (optional) -->
+    <rect class="row-odd" x="0" y="550" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="580">Battery Heater (optional)</text>
+    <text class="text" x="280" y="580">Pad heater, thermostatically controlled</text>
+    <text class="text" x="480" y="580">$50–100</text>
+    <text class="text qty" x="650" y="580">1</text>
+    <text class="text" x="720" y="580">For sub-zero charging</text>
+
+    <!-- Row 13: Total (Initial) -->
+    <rect class="row-even" x="0" y="600" width="900" height="50" rx="2"/>
+    <text class="text" x="80" y="630">Total (Initial)</text>
+    <text class="text" x="280" y="630">—</text>
+    <text class="text" x="480" y="630">$930–2300</text>
+    <text class="text qty" x="650" y="630">—</text>
+    <text class="text" x="720" y="630">~$1k typical</text>
   </g>
 
   <!-- Legend -->
-  <g transform="translate(50, 530)">
+  <g transform="translate(50, 730)">
     <text class="text" x="0" y="0">Notes: Costs are approximate 2026 USD. Prices vary by region and supplier.</text>
     <text class="text" x="0" y="25">Smart contract deployment on Base Sepolia (testnet) is free; mainnet requires ~0.5 USDC deposit.</text>
   </g>
